@@ -1,0 +1,2 @@
+from kamisetas_app.models.produto import Produto
+from kamisetas_app.models.variacao_produto import VariacaoProduto
