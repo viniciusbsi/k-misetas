@@ -96,4 +96,4 @@ pip-selfcheck.json
 
 
 # End of https://www.gitignore.io/api/venv,pycharm
-/db.sqlite
+.db.sqlite
