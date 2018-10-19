@@ -17,9 +17,16 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import path, include
 from django.views.generic.base import TemplateView
+from django.conf.urls import url
+
+from kamisetas_app.views import *
 
 urlpatterns = [
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
+    url(r'^produto/cadastrar', ProdutoCreateView.as_view(), name='produto-cadastrar'),
+    url(r'^variacao/produto/cadastrar', VariacaoProdutoCreateView.as_view(), name='variacao-produto-cadastrar'),
+    url(r'^produto/carrinho/cadastrar', ProdutoCarrinhoCreateView.as_view(), name='produto-carrinho-cadastrar'),
+
 ]

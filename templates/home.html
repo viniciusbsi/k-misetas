@@ -10,4 +10,7 @@
         <p>You are not logged in</p>
         <a href="{% url 'login' %}">login</a>
     {% endif %}
+    <a href="{% url 'produto-cadastrar' %}">Cadastrar Produto</a>
+    <a href="{% url 'variacao-produto-cadastrar' %}">Cadastrar Variação Produto</a>
+    <a href="{% url 'produto-carrinho-cadastrar' %}">Novo Pedido</a>
 {% endblock %}

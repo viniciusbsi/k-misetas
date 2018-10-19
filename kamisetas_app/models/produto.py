@@ -4,7 +4,7 @@ from django.db import models
 class Produto(models.Model):
     descricao = models.CharField(max_length=200)
     marca = models.CharField(max_length=200, null=True, blank=True)
-    variacao = models.ForeignKey('VariacaoProduto', related_name='Produto_variacao', on_delete=models.CASCADE)
+    variacao = models.ForeignKey('kamisetas_app.VariacaoProduto', related_name='produto_variacao', on_delete=models.CASCADE)
     excluido = models.BooleanField(default=False)
 
     def __unicode__(self):

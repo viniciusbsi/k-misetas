@@ -8,7 +8,7 @@ class VariacaoProduto(models.Model):
     qtd_estoque = models.IntegerField(validators=[MinValueValidator(0)])
 
     def __unicode__(self):
-        return '%s' % self.descricao
+        return '%s' % self.id
 
     def __str__(self):
-        return '%s' % self.descricao
+        return '%s' % self.id
