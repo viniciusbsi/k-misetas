@@ -5,7 +5,7 @@ from kamisetas_app.models import VariacaoProduto
 from django.contrib.auth.models import Permission
 
 class ProdutoForm(ModelForm):
-    variacao = ModelMultipleChoiceField(queryset=VariacaoProduto.objects.all())
+    # variacao = ModelMultipleChoiceField(queryset=VariacaoProduto.objects.all())
 
     class Meta:
         model = Produto

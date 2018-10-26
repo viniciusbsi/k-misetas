@@ -1,3 +1,0 @@
-from kamisetas_app.views.produto_create import ProdutoCreateView
-from kamisetas_app.views.produto_carrinho import ProdutoCarrinhoCreateView
-from kamisetas_app.views.variacao_produto_create import VariacaoProdutoCreateView

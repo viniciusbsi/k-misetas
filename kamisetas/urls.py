@@ -13,20 +13,20 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls import include, url
 from django.contrib import admin
-from django.urls import path
-from django.urls import path, include
-from django.views.generic.base import TemplateView
-from django.conf.urls import url
-
-from kamisetas_app.views import *
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='home.html'), name='home'),
-    path('admin/', admin.site.urls),
-    path('accounts/', include('django.contrib.auth.urls')),
-    url(r'^produto/cadastrar', ProdutoCreateView.as_view(), name='produto-cadastrar'),
-    url(r'^variacao/produto/cadastrar', VariacaoProdutoCreateView.as_view(), name='variacao-produto-cadastrar'),
-    url(r'^produto/carrinho/cadastrar', ProdutoCarrinhoCreateView.as_view(), name='produto-carrinho-cadastrar'),
+    url(r'^admin', include(admin.site.urls)),
+    url(r'', include('kamisetas_app.urls')),
+    url(r'^i18n/', include('django.conf.urls.i18n')),
 
 ]
+
+# urlpatterns = [
+#     path('', TemplateView.as_view(template_name='home.html'), name='home'),
+#     path('admin/', admin.site.urls),
+#     path('accounts/', include('django.contrib.auth.urls')),
+#
+#
+# ]

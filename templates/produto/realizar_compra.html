@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% for compra in compras_usuario %}
+        {{ compra.produto.descricao }} | {{ compra.qtd_produto }}
+    {% endfor %}
+</head>
+<body>
+
+</body>
+</html>

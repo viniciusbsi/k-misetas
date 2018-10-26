@@ -5,10 +5,10 @@ from django.core.validators import MinValueValidator
 
 
 class CarrinhoUser(models.Model):
-    usuario = models.ForeignKey('Usuario', related_name='carrinho_usuario', on_delete=models.CASCADE)
+    usuario = models.ForeignKey('auth.User', on_delete=models.CASCADE)
 
     def __unicode__(self):
-        return '%s' % self.id
+        return '%s' % self.usuario.get_full_name()
 
     def __str__(self):
-        return '%s' % self.id
+        return '%s' % self.usuario.get_full_name()
