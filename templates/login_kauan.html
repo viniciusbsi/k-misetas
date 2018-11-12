@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+    <div class="seven wide column">
+        <div class="row"></div>
+        <div class="ui container segment">
+            <h2 class="content sges-title">K@MISETAS</h2>
+            <h3 class="sub header sges-title"></h3>
+            <p class="justified">E-Commerce de camisetas personalizadas desenvolvido como projeto para a disciplina Engenharia de Software II.</p>
+            <h4 class="sub header sges-title">Sistema Desenvolvido Por:</h4>
+            <p><strong>Giorgy Ismael</strong> & <strong>Heloisa Marcella Kubis</strong> & <strong>Kauan Amarante</strong> & <strong>Vinicius Oliveira</strong></p>
+
+        </div>
+    </div>
+    {% if user.is_anonymous%}
+    <div class="two wide column">
+        <div class="ui vertical divider grey"></div>
+    </div>
+    <div class="four wide column">
+        <h2 class="ui center aligned header">
+            <span class="content sges-title">Acesse sua conta</span>
+        </h2>
+        <form class="ui large form segment" method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div class="ui center aligned">
+                <div class="field">
+                    <div class="ui left icon input focus">
+                        <i class="user icon"> </i>
+                        {{ form.username }}
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui left icon input focus">
+                        <i class="lock icon"> </i>
+                        {{ form.password }}
+                    </div>
+                </div>
+                <input class="ui fluid button positive" type="submit" value="Login"/>
+            </div>
+            <div class="ui error message"></div>
+        </form>
+    </div>
+    {%endif%}
+{% endblock %}
