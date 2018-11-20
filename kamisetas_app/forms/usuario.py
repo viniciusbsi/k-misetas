@@ -1,7 +1,7 @@
 # coding: utf-8
 from django import forms
 from django.contrib.auth.models import User
-from betterforms.multiform import MultiModelForm
+# from betterforms.multiform import MultiModelForm
 from django.contrib.auth.forms import UserCreationForm
 
 
